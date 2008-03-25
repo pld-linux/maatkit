@@ -2,7 +2,7 @@
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
 Version:	1877
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/Databases
 URL:		http://sourceforge.net/projects/maatkit/
@@ -10,9 +10,9 @@ Source0:	http://dl.sourceforge.net/maatkit/%{name}-%{version}.tar.gz
 # Source0-md5:	5c52b18a5eb8e510f48c4b9a1f6df71d
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-DBD-MySQL >= 1.0
+Requires:	perl-DBD-mysql >= 1.0
 Requires:	perl-DBI >= 1.13
-Requires:	perl-TermReadKey >= 2.10
+Requires:	perl-Term-ReadKey >= 2.10
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
