@@ -1,13 +1,13 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
-Version:	1877
-Release:	0.2
-License:	GPL
+Version:	2152
+Release:	0.1
+License:	GPL v2
 Group:		Applications/Databases
-URL:		http://sourceforge.net/projects/maatkit/
-Source0:	http://dl.sourceforge.net/maatkit/%{name}-%{version}.tar.gz
-# Source0-md5:	5c52b18a5eb8e510f48c4b9a1f6df71d
+URL:		http://www.maatkit.org/
+Source0:	http://maatkit.googlecode.com/files/%{name}-%{version}.tar.gz
+# Source0-md5:	2ab216169f323f432d557d20cd7b9cdb
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-DBD-mysql >= 1.0
@@ -17,10 +17,13 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This toolkit contains essential command-line utilities for MySQL, such
-as a table checksum tool and query profiler. It provides missing
-features such as checking slaves for data consistency, with emphasis
-on quality and scriptability.
+Maatkit makes MySQL easier and safer to manage. It provides simple,
+predictable ways to do things you cannot otherwise do. It would be
+nice if these features were included with MySQL, but they are not.
+
+You can use Maatkit to prove replication is working correctly, fix
+corrupted data, automate repetitive tasks, speed up your servers, and
+much, much more.
 
 %prep
 %setup -q
