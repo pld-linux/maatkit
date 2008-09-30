@@ -2,7 +2,7 @@
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
 Version:	2152
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 URL:		http://www.maatkit.org/
