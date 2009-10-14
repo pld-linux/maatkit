@@ -1,12 +1,12 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
-Version:	2442
+Version:	4790
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://maatkit.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	9b07322ebca4596ea263bd319e496d8b
+# Source0-md5:	0f29612cbc22afda084c526f3153b3ab
 URL:		http://www.maatkit.org/
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -31,9 +31,8 @@ as a table checksum tool and query profiler. It provides missing
 features such as checking slaves for data consistency, with emphasis
 on quality and scriptability.
 
-MySQL Toolkit is a collection of essential command-line utilities for
-MySQL. Each is completely stand-alone, without dependencies other than
-core Perl and the DBI drivers needed to connect to MySQL.
+Each utility is completely stand-alone, without dependencies other
+than core Perl and the DBI drivers needed to connect to MySQL.
 
 %description -l pl.UTF-8
 MySQL Toolkit to zbiór ważnych narzędzi uruchamianych z linii poleceń
@@ -55,6 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 	PERL_INSTALL_ROOT=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/maatkit/.packlist
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/maatkit.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,8 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changelog
-%attr(755,root,root) %{_bindir}/*
-%{perl_vendorlib}/maatkit.pm
-%{perl_vendorlib}/maatkitdsn.pm
-%{_mandir}/man1/*.1*
-%{_mandir}/man3/*.3*
+%attr(755,root,root) %{_bindir}/mk-*
+%{_mandir}/man1/maatkit.1p*
+%{_mandir}/man1/mk-*
