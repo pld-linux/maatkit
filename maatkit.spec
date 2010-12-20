@@ -2,10 +2,10 @@
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
 Version:	7119
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Databases
-Source0:	http://maatkit.googlecode.com/files/maatkit-7119.tar.gz
+Source0:	http://maatkit.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	fbb4c1fb76c26f8f33adb3e9d167efae
 URL:		http://www.maatkit.org/
 BuildRequires:	perl-ExtUtils-MakeMaker
