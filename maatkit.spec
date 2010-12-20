@@ -2,11 +2,12 @@
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
 Version:	7119
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://maatkit.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	fbb4c1fb76c26f8f33adb3e9d167efae
+Source1:	%{name}.conf
 URL:		http://www.maatkit.org/
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -55,8 +56,9 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 %{__make} pure_install \
 	PERL_INSTALL_ROOT=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/auto/maatkit/.packlist
-%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/maatkit.pod
+cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/auto/%{name}/.packlist
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/%{name}.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,6 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changelog
 %dir %{_sysconfdir}/%{name}
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/%{name}.conf
 %attr(755,root,root) %{_bindir}/mk-*
 %{_mandir}/man1/maatkit.1p*
 %{_mandir}/man1/mk-*
