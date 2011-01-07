@@ -1,12 +1,12 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Essential command-line utilities for MySQL
 Name:		maatkit
-Version:	7119
-Release:	3
+Version:	7207
+Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://maatkit.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	fbb4c1fb76c26f8f33adb3e9d167efae
+# Source0-md5:	e644c8718b7502ea73b329f692396e04
 Source1:	%{name}.conf
 URL:		http://www.maatkit.org/
 BuildRequires:	perl-ExtUtils-MakeMaker
